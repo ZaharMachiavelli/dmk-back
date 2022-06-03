@@ -85,10 +85,10 @@ WSGI_APPLICATION = 'urfuService.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'urfuservice',
-        'USER' : 'Antihach' ,
-        'PASSWORD' : '228asdfghjkl228',
-        'HOST' : 'localhost',
+        'NAME': 'deiib48uca18v9',
+        'USER' : 'pnhvipctshajpa' ,
+        'PASSWORD' : 'dcce67c2502a6c9eff17568edb13c3f31ebf626f29dab75f1736483730e4f836',
+        'HOST' : 'ec2-54-147-33-38.compute-1.amazonaws.com',
         'PORT' : '5432'
     }
 }
