@@ -29,7 +29,7 @@ class StatisticView(APIView):
         else:
             statistic = Statistic.objects.filter(year=year)
         serializer = StatisticSerializer(statistic, many=True)
-        return Response({'statistic': serializer.data})
+        return Response(serializer.data)
 
 # class ProfessionView(APIView):
 #     def get(self, request):
