@@ -15,7 +15,8 @@ urlpatterns = [
     path('courses', CourseView.as_view()),
     path('courses/<slug:slug_id>', get_course),
     path('user', UserView.as_view()),
-    path('hype', get_hype)
+    path('stat/<int:year>', StatisticView.as_view()),
+    # path('hype', get_hype)
     # path('getprofession', CheckDiscipline.as_view())
     # path('schedule/cheese/', FuckMyCheese.as_view()),
     # path('<int:art_id>/', views.ArticleDetailView.as_view())
