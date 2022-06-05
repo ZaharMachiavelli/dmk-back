@@ -28,7 +28,7 @@ class StatisticView(APIView):
             statistic = Statistic.objects.all()
         else:
             statistic = Statistic.objects.filter(year=year)
-        serializer = StatisticSerializer(statistic)
+        serializer = StatisticSerializer(statistic, many=True)
         return Response(serializer.data)
 
 # class ProfessionView(APIView):
