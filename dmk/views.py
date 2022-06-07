@@ -55,7 +55,8 @@ class CourseView(APIView):
         serializer = CourseSerializer(courses, many=True)
         return Response(serializer.data)
     def post(self, request):
-        favourites = request.data.courses
+        print(request.data)
+        favourites = request.data
         courses = Course.objects.filter(pk__in=favourites)
         serializer = CourseSerializer(courses, many=True)
         return Response(serializer.data)
