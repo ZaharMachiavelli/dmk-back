@@ -54,6 +54,11 @@ class CourseView(APIView):
         courses  = Course.objects.all()
         serializer = CourseSerializer(courses, many=True)
         return Response(serializer.data)
+    def post(self, request):
+        favourites = request.GET.get('courses')
+        courses = Course.objects.filter(pk__in=favourites)
+        serializer = CourseSerializer(courses, many=True)
+        return Response(serializer.data)
     
 class CheckDiscipline(APIView):
     def post(self, request):
