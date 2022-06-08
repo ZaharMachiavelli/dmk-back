@@ -126,6 +126,7 @@ class Course(models.Model):
     image = models.ImageField(upload_to="", verbose_name = 'Изображение', null=True, blank = True)
     agregator = models.ForeignKey(Agregator, blank=True, null=True, on_delete=models.CASCADE, verbose_name= "Автор курса")
     profession = models.ManyToManyField(ProfessionDetail, blank=True, verbose_name="Связанная профессия")
+    image_link= models.CharField(max_length=1024, blank=True, null=True, verbose_name="Хуйня")
 
     def __str__(self):
         return self.name
