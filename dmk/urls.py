@@ -10,7 +10,6 @@ urlpatterns = [
     path('', include(router.urls)),
     path('profession', get_cx),
     path('professions', ProfessionView.as_view()),
-    path('profession/<int:id>', ProfessionView.as_view()),
     # path('stat/<int:year>/', StatisticView.as_view()),
     path('skills', SkillsView.as_view()),
     path('courses', CourseView.as_view()),

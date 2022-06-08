@@ -38,12 +38,13 @@ class StatisticView(APIView):
 #         return Response({'professions': serializer.data})
 
 class ProfessionView(APIView):
-    def get(self, request, id=None):
-        print(id)
-        if id is None:
-            professions = ProfessionDetail.objects.all()
-        else: 
-            professions = ProfessionDetail.objects.get(pk = id)
+    def get(self, request):
+        professions = ProfessionDetail.objects.all()
+        serializer = ProfessionSerializer(professions, many=True)
+        return Response(serializer.data)
+    def post(self,request):
+        presets = request.data
+        professions = ProfessionDetail.objects.filter(pk__in = presets)
         serializer = ProfessionSerializer(professions, many=True)
         return Response(serializer.data)
 
