@@ -12,7 +12,7 @@ class User(AbstractUser):
     favourites = models.ManyToManyField("Course", null=True, blank=True)
     presets = models.ManyToManyField("CourseChain", blank=True, null=True)
 
-    REQUIRED_FIELDS = ['biography', 'email', 'favourites', 'first_name', 'last_name']
+    REQUIRED_FIELDS = ['biography', 'email', 'favourites', 'first_name', 'last_name', 'presets']
 
     def __str__(self):
         return self.username
