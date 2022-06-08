@@ -10,7 +10,7 @@ AGREGATORS = [('Skillbox', 'Skillbox'), ('GeekBrains', 'GeekBrains'), ('Netology
 class User(AbstractUser):
     biography = models.CharField("Биография", max_length= 255, null=True, blank=True)
     favourites = models.ManyToManyField("Course", null=True, blank=True)
-    presets = models.ManyToManyField("CourseChain", blank=True, null=True)
+    presets = models.ManyToManyField("ProfessionDetail", blank=True, null=True)
 
     REQUIRED_FIELDS = ['biography', 'email', 'favourites', 'first_name', 'last_name', 'presets']
 
