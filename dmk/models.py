@@ -2,6 +2,7 @@ from unicodedata import name
 from django.db import models
 from django.core.exceptions import ValidationError
 from django.contrib.auth.models import AbstractUser
+from django.conf import settings
 
 AGREGATORS = [('Skillbox', 'Skillbox'), ('GeekBrains', 'GeekBrains'), ('Netology', 'Нетология'), ('Yandex', 'Яндекс Практикум'), ('Skillfactory', 'Skillfactory'), ('Coursera', 'Coursera'), ('Stepik', 'Stepik'),]
 
@@ -137,6 +138,9 @@ class Course(models.Model):
         return f"/courses/${self.slug}/"
 
     def get_image(self):
+        print(settings.MEDIA_URL)
+        print(settings.MEDIA_ROOT)
+        print(self.image.url)
         if self.image:
            return 'https://urfuservice.herokuapp.com' + self.image.url
         return '' 
