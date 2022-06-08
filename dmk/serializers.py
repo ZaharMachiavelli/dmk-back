@@ -10,7 +10,7 @@ class CourseSerializer(serializers.ModelSerializer):
     agregator = AgregatorSerializer(read_only=True)
     class Meta:
         model = Course
-        fields = ('id', 'slug', 'name', 'description', 'link', 'agregator', 'get_image')
+        fields = ('id', 'slug', 'name', 'description', 'link', 'agregator', 'get_image', 'image_link')
 
 class StatisticSerializer(serializers.ModelSerializer):
     class Meta:
