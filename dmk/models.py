@@ -123,7 +123,7 @@ class Course(models.Model):
     slug = models.SlugField(max_length=128, verbose_name= "Тег курса", unique=True)
     description = models.TextField(verbose_name= "Описание")
     link = models.CharField(max_length=1024, blank=True, null=True, verbose_name= "Ссылка на курс")
-    image = models.ImageField(upload_to="", verbose_name = 'Изображение', null=True, blank = True)
+    image = models.ImageField(upload_to="uploads/", verbose_name = 'Изображение', null=True, blank = True)
     agregator = models.ForeignKey(Agregator, blank=True, null=True, on_delete=models.CASCADE, verbose_name= "Автор курса")
     profession = models.ManyToManyField(ProfessionDetail, blank=True, verbose_name="Связанная профессия")
     image_link= models.CharField(max_length=1024, blank=True, null=True, verbose_name="Хуйня")
@@ -139,9 +139,6 @@ class Course(models.Model):
         return f"/courses/${self.slug}/"
 
     def get_image(self):
-        print(settings.MEDIA_URL)
-        print(settings.MEDIA_ROOT)
-        print(self.image.url)
         if self.image:
            return 'https://urfuservice.herokuapp.com' + self.image.url
         return '' 
