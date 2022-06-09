@@ -38,7 +38,7 @@ class CourseChain(models.Model):
 
 class Statistic(models.Model):
 
-    YEARS = [('2017', 2017), ('2018', 2018), ('2019', 2019), ('2020', 2020), ('2021', 2021), ('2017-2021', 2022)]
+    YEARS = [('2017', 2017), ('2018', 2018), ('2019', 2019), ('2020', 2020), ('2021', 2021), ('2022', 2022)]
 
     programmer = models.IntegerField(verbose_name = 'Программист')
     web = models.IntegerField(verbose_name = 'Веб')
